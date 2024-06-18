@@ -1,14 +1,17 @@
-#!/bin/bash
+COMPOSE_CMD="docker-compose -f quickstart.yml -f quickstart-postgres.yml -f quickstart-tracing.yml"
 
-case $1 in
+COMMAND=$1
+
+case $COMMAND in
   up)
-    docker-compose -f quickstart.yml -f quickstart-postgres.yml -f quickstart-tracing.yml up
+    $COMPOSE_CMD up
     ;;
   down)
-    docker-compose -f quickstart.yml -f quickstart-postgres.yml -f quickstart-tracing.yml down
+    $COMPOSE_CMD down
+
     ;;
   *)
-    echo "Usage: dewi_hydra {up|down}"
+    echo "Usage: dewi_hydra [up|down]"
     exit 1
     ;;
 esac
