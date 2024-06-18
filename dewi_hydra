@@ -8,10 +8,15 @@ case $COMMAND in
     ;;
   down)
     $COMPOSE_CMD down  -v --rmi all --remove-orphans
-
+    ;;
+  logs)
+    $COMPOSE_CMD logs -f
+    ;;
+  status)
+    $COMPOSE_CMD ps
     ;;
   *)
-    echo "Usage: dewi_hydra [up|down]"
+    echo "Usage: dewi_hydra [up|down|logs|status]"
     exit 1
     ;;
 esac
