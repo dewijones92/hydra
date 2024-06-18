@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case $1 in
+  up)
+    docker-compose -f quickstart.yml -f quickstart-postgres.yml -f quickstart-tracing.yml up
+    ;;
+  down)
+    docker-compose -f quickstart.yml -f quickstart-postgres.yml -f quickstart-tracing.yml down
+    ;;
+  *)
+    echo "Usage: dewi_hydra {up|down}"
+    exit 1
+    ;;
+esac
