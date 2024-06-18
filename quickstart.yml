@@ -51,7 +51,7 @@ services:
   consent:
     environment:
       - HYDRA_ADMIN_URL=http://hydra:4445
-    image: oryd/hydra-login-consent-node:latest
+    image: docker.io/oryd/hydra-login-consent-node:latest 
     ports:
       - "3000:3000"
     restart: unless-stopped
