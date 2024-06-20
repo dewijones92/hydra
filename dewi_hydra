@@ -7,7 +7,7 @@ case $COMMAND in
     $COMPOSE_CMD up
     ;;
   down)
-    $COMPOSE_CMD down  -v --rmi all --remove-orphans
+    $COMPOSE_CMD down  -v --remove-orphans
     ;;
   logs)
     $COMPOSE_CMD logs -f
